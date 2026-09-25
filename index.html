@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>З Днем Народження, Коханий!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Фонова музика -->
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Кнопка управління музикою -->
+    <button id="music-toggle" class="music-btn" title="Увімкнути музику">
+        <i class="fa-solid fa-volume-xmark"></i>
+    </button>
+
+    <!-- Стартовий екран -->
+    <section class="hero" id="home">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <h1 class="glitch" data-text="З Днем Народження!">З Днем Народження!</h1>
+            <p class="typewriter"></p>
+            <a href="#journey" class="scroll-down">
+                <span>Почати подорож</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Інтерактивні привітання (Картки, що перевертаються) -->
+    <section class="wishes-section" id="journey">
+        <h2 class="section-title reveal">Чому я тебе обожнюю...</h2>
+        <div class="cards-container">
+            <div class="flip-card reveal">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fa-solid fa-face-laugh-squint"></i>
+                        <h3>Твоя посмішка</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Вона робить мій день яскравішим навіть у найпохмурішу погоду ☀️</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card reveal reveal-delay-1">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        <h3>Твоя турбота</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>З тобою я завжди почуваюся в безпеці, як за кам'яною стіною 🏰</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card reveal reveal-delay-2">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <i class="fa-solid fa-bolt"></i>
+                        <h3>Твоя енергія</h3>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Ти надихаєш мене бути кращою і ніколи не здаватися 🚀</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Анімована галерея -->
+    <section class="gallery-section">
+        <h2 class="section-title reveal">Наші спогади</h2>
+        <div class="slideshow-container reveal">
+            
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 5</div>
+                <img src="photo_2026-09-25_23-55-20.jpg">
+                <div class="text">Найкращий день разом</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 5</div>
+                <img src="photo_2026-09-25_23-55-21.jpg">
+                <div class="text">Сміємося до сліз</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 5</div>
+                <img src="photo_2026-09-25_23-55-22.jpg">
+                <div class="text">Ти - мій всесвіт</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 5</div>
+                <img src="photo_2026-09-25_23-55-23.jpg">
+                <div class="text">Люблю тебе безмежно</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">5 / 5</div>
+                <img src="photo_2026-09-25_23-55-24.jpg">
+                <div class="text">Назавжди разом</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+            <span class="dot" onclick="currentSlide(5)"></span> 
+        </div>
+    </section>
+
+    <!-- Прикол: Фейкова перевірка безпеки -->
+    <section class="prank-section">
+        <h2 class="section-title reveal">Отримати головний подарунок</h2>
+        <div class="terminal reveal" id="terminal">
+            <div class="terminal-header">
+                <span class="dot-red"></span>
+                <span class="dot-yellow"></span>
+                <span class="dot-green"></span>
+            </div>
+            <div class="terminal-body">
+                <p>> Система захисту активована.</p>
+                <p>> Перевірка особистості...</p>
+                <button id="verify-btn" class="glow-on-hover">Пройти верифікацію</button>
+                <div id="prank-process" class="hidden">
+                    <p class="typing-text">> Сканування рівня крутості: <span class="loading">██████████ 100%</span></p>
+                    <p class="typing-text delay-1">> Сканування рівня харизми: <span class="loading">██████████ 999%</span></p>
+                    <p class="typing-text delay-2 error">ПОМИЛКА! Рівень ідеальності перевищує норму!</p>
+                    <h3 class="typing-text delay-3 success-msg">Доступ дозволено! Ти найкращий! ❤️🎁</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вибух фотографій (ховається до успішного сканування) -->
+        <div id="photo-wall" class="hidden photo-explosion">
+            <!-- Замінюйте текст всередині .p-img на теги <img> з вашими фото -->
+            <div class="polaroid p1"><div class="p-img"><img src="photo_2026-09-25_23-55-25.jpg"></div></div>
+            <div class="polaroid p2"><div class="p-img"><img src="photo_2026-09-25_23-55-26.jpg"></div></div>
+            <div class="polaroid p3"><div class="p-img"><img src="photo_2026-09-25_23-55-27.jpg"></div></div>
+            <div class="polaroid p4"><div class="p-img"><img src="photo_2026-09-25_23-55-21 (2).jpg"></div></div>
+            <div class="polaroid p5"><div class="p-img"><img src="photo_2026-09-25_23-55-23 (2).jpg"></div></div>
+            <div class="polaroid p6"><div class="p-img"><img src="photo_2026-09-25_23-55-25 (2).jpg"></div></div>
+            <div class="polaroid p7"><div class="p-img"><img src="photo_2026-09-25_23-55-26 (2).jpg"></div></div>
+            <div class="polaroid p8"><div class="p-img"><img src="photo_2026-09-25_23-55-27 (2).jpg"></div></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Створено тільки для тебе з безмежною любов'ю ✨</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
